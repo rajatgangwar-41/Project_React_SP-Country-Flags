@@ -1,9 +1,9 @@
 import React from 'react'
 
-const DropdownBar = () => {
+const DropdownBar = ({ setRegion }) => {
   return (
-      <select name="Region" className='dropDownBar-section'>
-        <option hidden="">Filter by Region</option>
+      <select name="Region" className='dropDownBar-section' onClick={(e) => setRegion(e.target.value)}>
+        <option value="" hidden="">Filter by Region</option>
         <option value="Africa">Africa</option>
         <option value="Asia">Asia</option>
         <option value="Europe">Europe</option>

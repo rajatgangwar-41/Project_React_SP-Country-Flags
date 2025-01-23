@@ -6,22 +6,25 @@ import CountryData from '../../countriesData';
 
 const CountriesContainer = () => {
 
-  // CountryData.sort((countryA, countryB) => {
-  //   return countryA.name.common.localeCompare(countryB.name.common);
-  // });
+  // CountryData.sort((countryA, countryB) => 
+  //   countryA.name.common.localeCompare(countryB.name.common)
+  // );
 
   const [query, setQuery] = useState('');
+  const [region, setRegion] = useState('');
 
   return (
     <main className='countries-container'>
         <div className="filter-section">
             <Search setQuery={setQuery}/>
-            <DropdownBar />
+            <DropdownBar setRegion={setRegion}/>
         </div>
         <div className="countries-list">
           {
             CountryData.filter((country) => 
               country.name.common.toLowerCase().includes(query)
+            ).filter((country) => 
+              country.region.includes(region) || country.subregion ?.includes(region)
             ).map((country) => {
               return (
                 <CountryCard 
