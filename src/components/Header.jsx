@@ -3,16 +3,16 @@ import flagURL from '../assets/flag.png';
 
 const Header = () => {
   const [mode, setMode] = useState("Dark Mode");
-  const [modeIcon, setModeIcon] = useState(<i class="fa-regular fa-moon"></i>);
+  const [modeIcon, setModeIcon] = useState(<i className="fa-regular fa-moon"></i>);
 
   const toggleMode = () => {
     if(mode == "Dark Mode"){
       setMode("Light Mode"),
-      setModeIcon(<i class="fa-regular fa-sun"></i>)
+      setModeIcon(<i className="fa-regular fa-sun"></i>)
     }
     else{
       setMode("Dark Mode"),
-      setModeIcon(<i class="fa-regular fa-moon"></i>)
+      setModeIcon(<i className="fa-regular fa-moon"></i>)
     }
   }
 
